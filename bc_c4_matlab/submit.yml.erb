@@ -1,0 +1,24 @@
+<%-
+  ppn = num_cores.blank? ? 28 : num_cores.to_i
+  nodes = bc_num_slots.blank? ? 1 : bc_num_slots.to_i
+
+  case node_type
+  when "hugemem"
+    ppn = 48
+    partition = bc_num_slots.to_i > 1 ? "hugemem-parallel" : "hugemem"
+    slurm_args = [ "--nodes", "#{nodes}", "--ntasks-per-node", "#{ppn}", "--partition", partition ]
+  when "vis"
+    slurm_args = ["--nodes", "#{nodes}", "--ntasks-per-node", "#{ppn}", "--gpus-per-node", "1", "--gres", "vis" ]
+  else
+    slurm_args = ["--nodes", "#{nodes}", "--ntasks-per-node", "#{ppn}" ]
+  end
+%>
+---
+batch_connect:
+  template: vnc
+script:
+  accounting_id: "<%= account %>"
+  native:
+  <%- slurm_args.each do |arg| %>
+    - "<%= arg %>"
+  <%- end %>
