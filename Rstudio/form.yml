@@ -1,0 +1,37 @@
+---
+cluster: "c4"
+attributes:
+  bc_num_slots: 
+    value: 1
+    max: 1
+    min: 1
+    label: "Number of nodes"
+  bc_queue:
+    label: "Partition"
+  slurm_mem:
+    widget: "number_field"
+    max: 262144
+    min: 10240
+    step: 1024
+    value: 10240
+    label: "Memory (MB)"
+    help: "Enter a value in MB between 4 and 256"
+  slurm_cores:
+    widget: "number_field"
+    max: 16
+    min: 1
+    step: 1
+    value: 1
+    label: "Number of cores"
+    help: "Enter a value between 1 and 16"
+  slurm_nodelist:
+    label: "Compute Node"
+form:
+  - bc_account
+  - bc_queue
+  - bc_num_hours
+  - bc_num_slots
+  - slurm_mem
+  - slurm_cores
+  - slurm_nodelist
+  - bc_email_on_started
