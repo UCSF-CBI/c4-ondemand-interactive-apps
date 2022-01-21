@@ -1,6 +1,6 @@
 <form action="/rnode/<%= host %>/<%= port %>/auth-do-sign-in" method="post" target="_blank">
   <input type="hidden" name="username" value="<%= ENV["USER"] %>">
-  <input type="hidden" name="password" value="<%= password %>">
+  <input type="hidden" name="password" value="<%= ENV["RSTUDIO_PASSWOD"] %>">
   <input type="hidden" name="staySignedIn" value="1">
   <input type="hidden" name="appUri" value="">
   <input type="hidden" name="csrf-token" value="<%= csrf_token %>"/>
