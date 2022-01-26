@@ -13,10 +13,3 @@ export http_proxy=c4-yum1:3128
 export https_proxy=c4-yum1:3128
 export ftp_proxy=c4-yum1:3128
 
-# Fix for CSFR tokens
-<%-
-  require 'securerandom'
-  csrf_token = SecureRandom.uuid
--%>
-export csrf_token="<%= csrf_token %>"
-
