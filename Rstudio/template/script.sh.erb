@@ -1,79 +1,12 @@
 #!/usr/bin/env bash
 
-# Load the required environment
-setup_env () {
-  # Additional environment which could be moved into a module
-  # Change these to suit
-  export workdir=$HOME/rstudio-server
-  mkdir -p -m 700 ${workdir}/run ${workdir}/tmp ${workdir}/var/lib/rstudio-server
-}
 
-setup_env
-
-# Create database.conf
-cat > "$workdir/database.conf" << END
-  provider=sqlite
-  directory=$workdir/var/lib/rstudio-server
-END
-
-# Load CBI r module
+# Load CBI rsc module
 module purge
-module load CBI r/4.1.2 
+module load CBI rstudio-server-controller/0.1.2  
 
+# Make sure there are no running rsc sessions for this user.
+rsc stop
 
-# PAM auth helper used by RStudio
-export RSTUDIO_AUTH="${PWD}/bin/auth"
-#export RSTUDIO_AUTH="pam-helper"
-
-# Generate an `rsession` wrapper script
-export RSESSION_WRAPPER_FILE="${PWD}/rsession.sh"
-(
-umask 077
-sed 's/^ \{2\}//' > "${RSESSION_WRAPPER_FILE}" << EOL
-  #!/usr/bin/env bash
-
-  # Log all output from this script
-  export RSESSION_LOG_FILE="${PWD}/rsession.log"
-  export OMP_NUM_THREADS=${SLURM_JOB_CPUS_PER_NODE}
-  export R_LIBS_USER="~/R/%p-library/%v-CBI-gcc8" # specific to the module we called.
-
-  exec &>>"\$RSESSION_LOG_FILE"
-
-  # Launch the original command
-  echo "Launching rsession..."
-  set -x
-  exec rsession --r-libs-user "${R_LIBS_USER}" "\${@}"
-EOL
-)
-chmod 700 "${RSESSION_WRAPPER_FILE}"
-
-# Set working directory to home directory
-cd "${HOME}"
-
-export myTMPDIR="$workdir/$(mktemp -d)"
-
-mkdir -p "$myTMPDIR/rstudio-server"
-python -c 'from uuid import uuid4; print(uuid4())' > "$myTMPDIR/rstudio-server/secure-cookie-key"
-chmod 0600 "$myTMPDIR/rstudio-server/secure-cookie-key"
-
-set -x
-# Launch the RStudio Server
-echo "Starting up rserver..."
-export PATH=/usr/lib/rstudio-server/bin:$PATH
-rserver --server-daemonize 0 \
-        --database-config-file=$workdir/database.conf \
-        --www-port "${port}" \
-        --auth-none 1 \
-        --auth-pam-helper-path "${RSTUDIO_AUTH}" \
-        --auth-stay-signed-in-days 30 \
-        --auth-timeout-minutes 0 \
-        --auth-minimum-user-id 500 \
-        --rsession-path "${RSESSION_WRAPPER_FILE}" \
-        --secure-cookie-key-file "$workdir/tmpr/secure-cookie-key" \
-        --auth-encrypt-password 0 \
-        --server-data-dir "$workdir/run" \
-        --server-working-dir "$workdir/run" \
-        --server-user $USER
-
-echo 'Singularity as exited...'
-
+# Star the rsc script whcih will launch rstudio-server.
+rsc start --port="${port}"
