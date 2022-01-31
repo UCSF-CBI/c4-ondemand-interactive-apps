@@ -1,4 +1,4 @@
-check:
+%:
 	(cd Rstudio; make "$@")
 
 
