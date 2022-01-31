@@ -14,7 +14,7 @@ if [[ -z ${RSTUDIO_PASSWORD} ]]; then
 fi
 
 # Read in the password from user
-read -s -p "Password: " password
+read -r -s -p "Password: " password
 echo ""
 
 if [[ "${USERNAME}" == "${USER}" && "${password}" == "${RSTUDIO_PASSWORD}" ]]; then
