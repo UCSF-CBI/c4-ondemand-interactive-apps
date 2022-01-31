@@ -17,7 +17,7 @@ fi
 read -s -p "Password: " password
 echo ""
 
-if [[ ${USERNAME} == ${USER} && ${password} == ${RSTUDIO_PASSWORD} ]]; then
+if [[ "${USERNAME}" == "${USER}" && "${password}" == "${RSTUDIO_PASSWORD}" ]]; then
   echo "Successful authentication"
   exit 0
 else
