@@ -5,8 +5,5 @@
 module purge
 module load CBI rstudio-server-controller
 
-# Make sure there are no running rsc sessions for this user.
-rsc stop
-
 # Star the rsc script whcih will launch rstudio-server.
 rsc start --port="${port}"
