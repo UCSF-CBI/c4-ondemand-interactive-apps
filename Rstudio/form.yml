@@ -32,6 +32,4 @@ form:
   - slurm_mem
   - slurm_cores
   - bc_email_on_started
-
-  - slurm_nodelist
-  - bc_email_on_started
+ 
