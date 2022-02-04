@@ -10,12 +10,12 @@ attributes:
     label: "Partition"
   slurm_mem:
     widget: "number_field"
-    max: 262144
-    min: 10240
-    step: 1024
-    value: 10240
-    label: "Memory (MB)"
-    help: "Enter a value in MB between 4 and 256"
+    max: 256
+    min: 1
+    step: 1
+    value: 1
+    label: "Memory (GB)"
+    help: "Enter a value in GB between 1and 256"
   slurm_cores:
     widget: "number_field"
     max: 16
