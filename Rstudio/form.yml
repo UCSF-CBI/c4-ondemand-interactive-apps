@@ -24,8 +24,6 @@ attributes:
     value: 1
     label: "Number of cores"
     help: "Enter a value between 1 and 16"
-  slurm_nodelist:
-    label: "Compute Node"
 form:
   - bc_account
   - bc_queue
@@ -33,5 +31,7 @@ form:
   - bc_num_slots
   - slurm_mem
   - slurm_cores
+  - bc_email_on_started
+
   - slurm_nodelist
   - bc_email_on_started
