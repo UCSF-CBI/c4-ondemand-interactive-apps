@@ -1,6 +1,12 @@
 ---
 cluster: "c4"
 attributes:
+  bc_num_hours:
+    label: "Number of hours."
+    min: 1
+    max: 12
+    step: 1
+    help: "Enter number of hours between 1 and 12."
   bc_queue:
     label: "Partition"
   slurm_mem:
