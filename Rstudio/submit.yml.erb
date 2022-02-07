@@ -9,5 +9,6 @@ script:
     - "--ntasks"
     - "<%= slurm_cores.blank? ? 1 : slurm_cores.to_i %>"
     - "--mem"
-    - "<%= slurm_mem.blank? ? 1 : slurm_mem.to_i %>"
+    - "<%= slurm_mem.blank? ? 1 : slurm_mem.to_i %>gb"
+
 
