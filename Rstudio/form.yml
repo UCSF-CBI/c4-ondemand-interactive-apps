@@ -29,7 +29,6 @@ form:
   - bc_account
   - bc_queue
   - bc_num_hours
-  - bc_num_slots
   - slurm_mem
   - slurm_cores
 
