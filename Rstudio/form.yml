@@ -34,7 +34,6 @@ attributes:
     label: "Number of cores"
     help: "Enter a value between 1 and 16"
 form:
-  - bc_account
   - bc_queue
   - bc_num_hours
   - slurm_mem
