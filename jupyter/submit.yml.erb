@@ -31,5 +31,8 @@ batch_connect:
 #  native: # ... array of command line arguments ...
 script:
   native:
-    - "-N"
-    - "<%= bc_num_slots.blank? ? 1 : bc_num_slots.to_i %>"
+    - "-N 1"
+    - "--ntasks"
+    - "<%= slurm_cores.blank? ? 1 : slurm_cores.to_i %>"
+    - "--mem"
+    - "<%= slurm_mem.blank? ? 1 : slurm_mem.to_i %>gb"
