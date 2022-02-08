@@ -13,13 +13,10 @@ cd "${HOME}"
 <%- unless context.modules.blank? -%>
 # Purge the module environment to avoid conflicts
 module purge
-
-# Load the require modules
-module load <%= context.modules %>
-
-# List loaded modules
-module list
 <%- end -%>
+
+# Load venv
+source /software/c4/ondemand/software/jupyter_py38/bin/activate
 
 # Benchmark info
 echo "TIMING - Starting jupyter at: $(date)"
