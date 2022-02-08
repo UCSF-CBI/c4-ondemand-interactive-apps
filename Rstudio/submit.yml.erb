@@ -11,5 +11,5 @@ script:
     - "--mem"
     - "<%= slurm_mem.blank? ? 1 : slurm_mem.to_i %>gb"
     - "--gres"
-    - "<%= slurm_scratch.blank? ? 1 : "gres:" + slurm_scratch.to_s + "G" %>gb"
+    - "<%= slurm_scratch.blank? ? 1 : "scratch:" + slurm_scratch.to_s %>g"
 
