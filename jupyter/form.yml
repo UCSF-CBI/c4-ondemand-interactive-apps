@@ -25,12 +25,29 @@ attributes:
   #     modules: "python/3.5"
   # @example Using combination of modules
   #     modules: "python/3.5 cuda/8.0.44"
-  modules: "ONDEMAND scl-python/36"
+  modules: ""
 
   # Any extra command line arguments to feed to the `jupyter notebook ...`
   # command that launches the Jupyter notebook within the batch job
   extra_jupyter_args: ""
-
+  bc_queue:
+    label: "Partition"
+  slurm_mem:
+    widget: "number_field"
+    max: 256
+    min: 1
+    step: 1
+    value: 1
+    label: "Memory (GB)"
+    help: "Enter a value in GB between 1 and 256"
+  slurm_cores:
+    widget: "number_field"
+    max: 64
+    min: 1
+    step: 1
+    value: 1
+    label: "Number of cores"
+    help: "Enter a value between 1 and 64"
 # All of the attributes that make up the Dashboard form (in respective order),
 # and made available to the submit configuration file and the template ERB
 # files
@@ -43,8 +60,7 @@ attributes:
 form:
   - modules
   - extra_jupyter_args
-  - bc_account
   - bc_queue
   - bc_num_hours
-  - bc_num_slots
-  - bc_email_on_started
+  - slurm_mem
+  - slurm_cores
