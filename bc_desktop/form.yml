@@ -22,6 +22,7 @@ attributes:
     value: 1
     label: "Number of cores"
     help: "Enter a value between 1 and 64"
+submit: submit.yml.erb
 
 form:
   - bc_vnc_idle
