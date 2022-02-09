@@ -1,4 +1,5 @@
 ---
+cluster: "c4"
 attributes:
   desktop: "mate"
   bc_vnc_idle: 0
