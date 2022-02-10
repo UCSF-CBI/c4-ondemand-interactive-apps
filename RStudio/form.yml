@@ -24,7 +24,7 @@ attributes:
     step: 1
     value: 1
     label: "Scratch space (GB)"
-    help: "Enter a value between 1 and 2550 (1GiB - 2.5 TiB"   
+    help: "Enter a value between 1 and 2550 (1 GiB - 2.5 TiB)"   
   slurm_cores:
     widget: "number_field"
     max: 16
