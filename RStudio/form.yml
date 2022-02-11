@@ -15,7 +15,7 @@ attributes:
     min: 1
     step: 1
     value: 1
-    label: "Memory (GB)"
+    label: "Memory (GiB)"
     help: "Enter a value in GiB between 1and 256"
   slurm_scratch:
     widget: "number_field"
