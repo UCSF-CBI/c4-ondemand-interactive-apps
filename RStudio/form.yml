@@ -16,14 +16,14 @@ attributes:
     step: 1
     value: 1
     label: "Memory (GB)"
-    help: "Enter a value in GB between 1and 256"
+    help: "Enter a value in GiB between 1and 256"
   slurm_scratch:
     widget: "number_field"
     max: 256
     min: 1
     step: 1
     value: 1
-    label: "Scratch space (GB)"
+    label: "Scratch space (GiB)"
     help: "Enter a value between 1 and 2550 (1 GiB - 2.5 TiB)"   
   slurm_cores:
     widget: "number_field"
