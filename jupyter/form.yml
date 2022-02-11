@@ -38,8 +38,8 @@ attributes:
     min: 1
     step: 1
     value: 1
-    label: "Memory (GB)"
-    help: "Enter a value in GB between 1 and 256"
+    label: "Memory (GiB)"
+    help: "Enter a value in GiB between 1 and 256"
   slurm_cores:
     widget: "number_field"
     max: 64
