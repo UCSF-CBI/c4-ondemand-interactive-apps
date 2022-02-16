@@ -1,7 +1,8 @@
 ---
-name: Jupyter Notebook - Python38
+name: Jupyter Notebook (Python 3.8)
 category: Interactive Apps
 subcategory: Servers
 role: batch_connect
 description: |
-  This app will launch a Jupyter Notebook server on one node. It runs in a python 3.8 virtual environment.
+  This app launches Jupyter Notebook with Python 3.8 on a compute node.
+  
