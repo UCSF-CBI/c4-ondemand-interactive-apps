@@ -4,7 +4,7 @@ attributes:
   bc_num_hours:
     label: "Number of hours."
     min: 1
-    max: 12
+    max: 24
     step: 1
     help: "Enter number of hours between 1 and 24."
   bc_queue:
