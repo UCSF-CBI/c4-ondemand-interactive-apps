@@ -35,4 +35,4 @@ Since this is a core OOD application, it is treated differently from the rest.
 3. `git pull origin main`
 4. `cd ~/repositories/c4-ondemand-interactive-apps`
 5. `sudo  cp -Rf jupyter/ /var/www/ood/apps/sys/`
-6. 
+
