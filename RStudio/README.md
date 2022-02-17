@@ -1,4 +1,4 @@
-# Rstudio as an interactive job for the C4 Cluster
+# RStudio as an interactive job for the UCSF C4 Cluster
 
 ## Prerequisites
 
