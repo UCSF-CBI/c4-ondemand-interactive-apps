@@ -6,11 +6,12 @@ This Batch Connect app requires the following software be installed on the
 **compute nodes** that the batch job is intended to run on (**NOT** the
 OnDemand node):
 
-- [rstudio server controller](https://github.com/UCSF-CBI/rstudio-server-controller)
+- [Rstudio Server Controller (RSC)](https://github.com/UCSF-CBI/rstudio-server-controller)
 - [Lmod](https://www.tacc.utexas.edu/research-development/tacc-projects/lmod)
   6.0.1+ or any other `module purge` and `module load <modules>` based CLI
   used to load appropriate environments within the batch job before launching
-  the RStudio server.
+  the RStudio Server.
+
 All Batch Connect apps also require the following on the compute nodes:
 
 - [Websockify](https://pypi.org/project/websockify/)
