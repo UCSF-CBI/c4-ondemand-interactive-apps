@@ -8,7 +8,7 @@ OnDemand node):
 
 - [Rstudio Server Controller (RSC)](https://github.com/UCSF-CBI/rstudio-server-controller)
 - [Lmod](https://www.tacc.utexas.edu/research-development/tacc-projects/lmod)
-  6.0.1+ or any other `module purge` and `module load <modules>` based CLI
+  6.0.1+ or any other `module load <modules>` based CLI
   used to load appropriate environments within the batch job before launching
   the RStudio Server.
 
