@@ -44,4 +44,5 @@ Since this is a core Open OnDemand application, it is treated differently from t
 
 * Open OnDemand:
   - Website: https://openondemand.org/
+  - Documentation: https://osc.github.io/ood-documentation/latest/
   - Source code: https://github.com/OSC/ondemand/
