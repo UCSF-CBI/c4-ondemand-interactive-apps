@@ -2,11 +2,11 @@
 cluster: "c4"
 attributes:
   bc_num_hours:
-    label: "Number of hours."
+    label: "Number of hours"
     min: 1
     max: 24
     step: 1
-    help: "Enter number of hours between 1 and 24."
+    help: "Enter a value between 1 and 24 (hours)"
   bc_queue:
     label: "Partition"
   slurm_mem:
@@ -16,7 +16,7 @@ attributes:
     step: 1
     value: 1
     label: "Memory (GiB)"
-    help: "Enter a value in GiB between 1and 256"
+    help: "Enter a value between 1 and 256 (GiB)"
   slurm_scratch:
     widget: "number_field"
     max: 256
@@ -31,8 +31,8 @@ attributes:
     min: 1
     step: 1
     value: 1
-    label: "Number of cores"
-    help: "Enter a value between 1 and 16"
+    label: "Number of CPU cores"
+    help: "Enter a value between 1 and 16 (cores)"
 form:
   - bc_queue
   - bc_num_hours
