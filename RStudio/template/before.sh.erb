@@ -2,7 +2,7 @@
 [[ $(type -t module) == "function" ]] && export -f module
 
 # Find available port to run server on 
-port=$(find_port "${host}") 
+port=$(find_port "${host:?}") 
 
 # UCSF MODS
 export http_proxy=c4-yum1:3128

@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+#shellcheck source=before.sh.erb
+
 ## The version of R to run according to OnDemand form.
 ## Environment variable 'ONDEMAND_R_VERSION' is optional.
 ## If set, it should specify one of the available R version
@@ -14,5 +16,5 @@ module load CBI
 module load r/"${r_version}"
 module load rstudio-server-controller
 
-# Star the rsc script whcih will launch rstudio-server.
-rsc start --port="${port}"
+# Start RSC launching the personal Rstudio Server instance
+rsc start --port="${port:?}"
