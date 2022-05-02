@@ -1,6 +1,10 @@
 ---
 cluster: "c4"
 attributes:
+  r_version:
+    widget: "select"
+    options:
+      - ["default"]
   bc_num_hours:
     label: "Number of hours"
     min: 1

@@ -5,9 +5,16 @@
 ## The version of R to run according to OnDemand form.
 ## Environment variable 'ONDEMAND_R_VERSION' is optional.
 ## If set, it should specify one of the available R version
-## per 'module load CBI; module avail r'.  If not set, or
-## "default", then it will use Lmod's default version of R.
-r_version="${ONDEMAND_R_VERSION}"
+## in the CBI stack.  If not set, or "default", then it will
+## use Lmod's default version of R.
+##
+## To find available R version for form.yml, use:
+##
+##   module purge
+##   module load CBI
+##   r_versions=($(ls -1 "$MODULE_ROOT_CBI"/r/ | grep -E "^([[:digit:]]+|[.])+[.]lua$" | sed 's/.lua//' | sort -u | sort -h -r))
+##   printf '      - ["%s"]\n' "${r_versions[@]}"
+## 
 if [[ ${r_version} == "default" ]]; then
     r_version=""
 fi
