@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-# Load CBI rsc module
-
-module load CBI rstudio-server-controller
+module load CBI
+module load r/"${ONDEMAND_R_VERSION}"
+module load rstudio-server-controller
 
 # Star the rsc script whcih will launch rstudio-server.
 rsc start --port="${port}"
