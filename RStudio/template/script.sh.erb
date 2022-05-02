@@ -1,7 +1,17 @@
 #!/usr/bin/env bash
 
+## The version of R to run according to OnDemand form.
+## Environment variable 'ONDEMAND_R_VERSION' is optional.
+## If set, it should specify one of the available R version
+## per 'module load CBI; module avail r'.  If not set, or
+## "default", then it will use Lmod's default version of R.
+r_version="${ONDEMAND_R_VERSION}"
+if [[ ${r_version} == "default" ]]; then
+    r_version=""
+fi
+
 module load CBI
-module load r/"${ONDEMAND_R_VERSION}"
+module load r/"${r_version}"
 module load rstudio-server-controller
 
 # Star the rsc script whcih will launch rstudio-server.
