@@ -57,6 +57,7 @@ attributes:
     label: "Number of CPU cores"
     help: "Enter a value between 1 and 16 (cores)"
 form:
+  - r_version
   - bc_queue
   - bc_num_hours
   - slurm_mem
