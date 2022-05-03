@@ -19,7 +19,8 @@ fi
 
 # troubleshooting step
 
-echo "Rversion = <%= r_version? ? "default" : + r_version.to_s %>"
+# echo "Rversion = <%= r_version? ? "default" : + r_version.to_s %>"
+echo "Slurm mem = <%= slurm_mem.blank? ? 1 : slurm_mem.to_i %>"
 
 module load CBI
 module load r/"${r_version}"
