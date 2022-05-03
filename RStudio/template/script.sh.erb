@@ -13,13 +13,12 @@
 ##   make r_versions
 ##
 ## and paste output into RStudio/form.yml.
-#if [[ ${r_version} == "default" ]]; then
-#    r_version=""
-#fi
 
-# troubleshooting step
+r_version=<%= r_version >
 
-echo "Rversion = <%#= r_version %>"
+if [[ ${r_version} == "default" ]]; then
+    r_version=""
+fi
 
 module load CBI
 module load r/"${r_version}"
