@@ -19,11 +19,10 @@
 
 # troubleshooting step
 
-#echo "Rversion = <%#= r_version? ? "default" : + r_version.to_s %>"
-echo "Slurm mem = <%= slurm_mem.blank? ? 1 : slurm_mem.to_i %>"
+echo "Rversion = <%= r_version %>"
 
 module load CBI
-#module load r/"${r_version}"
+module load r/"${r_version}"
 module load rstudio-server-controller
 
 # Start RSC launching the personal Rstudio Server instance
