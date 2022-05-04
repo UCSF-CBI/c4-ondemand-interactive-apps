@@ -2,26 +2,8 @@
 
 #shellcheck source=before.sh.erb
 
-## The version of R to run according to OnDemand form.
-## Environment variable 'ONDEMAND_R_VERSION' is optional.
-## If set, it should specify one of the available R version
-## in the CBI stack.  If not set, or "default", then it will
-## use Lmod's default version of R.
-##
-## To find available R version for form.yml, use:
-##
-##   make r_versions
-##
-## and paste output into RStudio/form.yml.
-
-r_version="<%= context.r_version.to_s %>"
-
-if [[ ${r_version} == "default" ]]; then
-    r_version=""
-fi
-
 module load CBI
-module load r/"${r_version}"
+module load r/"<%= context.r_version %>"
 module load rstudio-server-controller
 
 # Start RSC launching the personal Rstudio Server instance
