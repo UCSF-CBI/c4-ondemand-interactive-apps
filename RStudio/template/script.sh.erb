@@ -14,7 +14,7 @@
 ##
 ## and paste output into RStudio/form.yml.
 
-r_version="<%= r_version.to_s %>"
+r_version="<%= context.r_version.to_s %>"
 
 if [[ ${r_version} == "default" ]]; then
     r_version=""
