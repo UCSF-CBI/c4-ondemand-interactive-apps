@@ -32,6 +32,12 @@ attributes:
   extra_jupyter_args: ""
   bc_queue:
     label: "Partition"
+  bc_num_hours:
+    label: "Number of hours"
+    min: 1
+    max: 24
+    step: 1
+    help: "Enter a value between 1 and 24 hours (up to 1 day)"    
   slurm_mem:
     widget: "number_field"
     max: 256
