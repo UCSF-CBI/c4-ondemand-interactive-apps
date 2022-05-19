@@ -31,7 +31,7 @@ attributes:
     min: 1
     max: 24
     step: 1
-    help: "Enter a value between 1 and 24 (hours)"
+    help: "Enter a value between 1 and 336 hours (up to 14 days)"
   bc_queue:
     label: "Partition"
   slurm_mem:
