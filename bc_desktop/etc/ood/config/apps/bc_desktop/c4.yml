@@ -7,6 +7,12 @@ attributes:
   bc_vnc_idle: 0
   bc_queue:
     label: "Partition"
+  bc_num_hours:
+    label: "Number of hours"
+    min: 1
+    max: 72
+    step: 1
+    help: "Enter a value between 1 and 72 hours (up to 3 days)"    
   bc_vnc_resolution:
     required: true
   node_type: null

@@ -35,9 +35,9 @@ attributes:
   bc_num_hours:
     label: "Number of hours"
     min: 1
-    max: 24
+    max: 72
     step: 1
-    help: "Enter a value between 1 and 24 hours (up to 1 day)"    
+    help: "Enter a value between 1 and 72 hours (up to 3 days)"    
   slurm_mem:
     widget: "number_field"
     max: 256
