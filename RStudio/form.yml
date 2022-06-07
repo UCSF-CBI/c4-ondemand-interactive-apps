@@ -26,6 +26,11 @@ attributes:
       - "3.1.0"
       - "3.0.0"
       - "2.15.0"
+
+  additional_modules:
+    widget: text_field
+    label: "Additional Modules"
+    help: "Enter any additional modules needed eg CBI hdf5"    
   bc_num_hours:
     label: "Number of hours"
     min: 1
@@ -60,6 +65,7 @@ attributes:
     help: "Enter a value between 1 and 16 (cores)"
 form:
   - r_version
+  - additional_modules
   - bc_queue
   - bc_num_hours
   - slurm_mem
