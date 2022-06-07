@@ -29,7 +29,7 @@ attributes:
   additional_modules:
     widget: text_field
     label: "Additional Modules"
-    help: "Enter any additional modules needed as you would using the module command from the command line. E.g. CBI gdal hdf5/1.12.1"    
+    help: "Enter additional modules to be loaded separated by space, e.g. CBI gdal hdf5/1.12.1"    
   bc_num_hours:
     label: "Number of hours"
     min: 1
