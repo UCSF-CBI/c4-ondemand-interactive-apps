@@ -7,5 +7,8 @@ module load CBI
 module load r/<%= context.r_version %>
 module load rstudio-server-controller
 
+# troubleshooting
+module list    
+
 # Start RSC launching the personal Rstudio Server instance
 rsc start --port="${port:?}"
