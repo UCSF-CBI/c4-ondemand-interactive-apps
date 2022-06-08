@@ -48,7 +48,7 @@ attributes:
     help: "Enter a value between 1 and 256 (GiB)"
   slurm_scratch:
     widget: "number_field"
-    max: 256
+    max: 2550
     min: 1
     step: 1
     value: 1
