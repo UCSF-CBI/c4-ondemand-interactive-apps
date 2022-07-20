@@ -18,6 +18,10 @@ module purge
 # Load venv
 source /software/c4/ondemand/software/jupyter_py38/bin/activate
 
+# Make sure the jupyter in our venv is first in the path.
+export JUPYTER_PATH=/software/c4/ondemand/software/jupyter_py38/bin
+export PATH=$JUPYTER_PATH:$PATH
+
 # Benchmark info
 echo "TIMING - Starting jupyter at: $(date)"
 
