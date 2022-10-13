@@ -56,3 +56,8 @@ c.NotebookApp.notebook_dir = '${HOME}'
 c.NotebookApp.disable_check_xsrf = True
 EOL
 )
+
+## Session information (useful for debugging)
+echo "Started on: $(date --rfc-3339=seconds)"
+echo "Hostname: $(hostname)"
+echo "Username: $(id --user --name)"
