@@ -16,7 +16,7 @@ else
 	YAMLLINT_OPTS:=
 endif
 
-all: shellcheck
+all: shellcheck yamllint
 	true
 
 version:
@@ -53,6 +53,45 @@ shellcheck:
 	     error_count=$$((error_count+1))
 	     $(TPUT) && printf "\r"
 	     printf "[$(FAIL)] checking %s\\n" "$$file"
+	   fi
+	done
+
+	echo "RESULT: $$ok_count OK, $$error_count ERROR"
+	if (( error_count > 0 )); then
+	  cat "$$stdout"
+	  exit 1
+	fi
+
+
+yamllint:
+	@stdout=$(TMPDIR)/stdout
+
+	ok_count=0
+	error_count=0
+	config=.yamllint.yml
+
+	echo "*** yamllint:"
+	if [[ ! -f "$$config" ]]; then
+	   echo "File not found: $$config (PWD=$$PWD)"
+	   ls -la
+	   exit 1
+	fi
+	files=$$(find . -type f -name "*.yml")
+	for file in $$files; do
+	   $(TPUT) && printf "[    ] checking %s" "$$file"
+	   if yamllint $(YAMLLINT_OPTS) -c "$$config" "$$file" >> "$$stdout" ; then
+	     ok_count=$$((ok_count+1))
+	     $(TPUT) && printf '\r'
+	     printf '[$(OK)] checking %s\n' "$$file"
+	   else
+	     error_count=$$((error_count+1))
+	     $(TPUT) && printf '\r'
+	     printf '[$(FAIL)] checking %s\n' "$$file"
+	     if (( error_count > 10 )); then
+	       echo "Too many errors. Terminating early."
+	       cat "$$stdout"
+	       exit 1
+	     fi
 	   fi
 	done
 
