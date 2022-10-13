@@ -6,10 +6,7 @@ batch_connect:
 script:
   native:
     - "--nodes=1"
-    - "--ntasks"
-    - "<%= slurm_cores.blank? ? 1 : slurm_cores.to_i %>"
-    - "--mem"
-    - "<%= slurm_mem.blank? ? 1 : slurm_mem.to_i %>gb"
-    - "--gres"
-    - "<%= slurm_scratch.blank? ? 1 : "scratch:" + slurm_scratch.to_s %>g"
+    - "--ntasks=<%= slurm_cores.blank?   ? 1 : slurm_cores.to_i %>"
+    - "--mem=<%=    slurm_mem.blank?     ? 1 : slurm_mem.to_i %>gb"
+    - "--gres=<%=   slurm_scratch.blank? ? 1 : "scratch:" + slurm_scratch.to_s %>g"
 
