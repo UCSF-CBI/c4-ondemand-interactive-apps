@@ -1,4 +1,5 @@
 [![shellcheck](https://github.com/UCSF-CBI/c4-ondemand-interactive-apps/actions/workflows/shellcheck.yml/badge.svg)](https://github.com/UCSF-CBI/c4-ondemand-interactive-apps/actions/workflows/shellcheck.yml)
+[![yamllint](https://github.com/UCSF-CBI/c4-ondemand-interactive-apps/actions/workflows/yamllint.yml/badge.svg)](https://github.com/UCSF-CBI/c4-ondemand-interactive-apps/actions/workflows/yamllint.yml)
 
 # Interactive Applications for OnDemand on the UCSF C4 Cluster
 
@@ -23,6 +24,7 @@ Since this is a core Open OnDemand application, it is treated differently from t
 4. `cd ~/repositories/c4-ondemand-interactive-apps/bc_desktop/etc/ood/config/apps`
 5. `sudo cp -Rf bc_desktop/ /etc/ood/config/apps/`
 
+
 ### RStudio Server
 
 1. Log in as `ansible`
@@ -30,6 +32,7 @@ Since this is a core Open OnDemand application, it is treated differently from t
 3. `git pull origin main`
 4. `cd ~/repositories/c4-ondemand-interactive-apps`
 5. `sudo  cp -Rf RStudio/ /var/www/ood/apps/sys/`
+
 
 ### Jupyter Notebook
 
