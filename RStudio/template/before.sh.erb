@@ -4,8 +4,13 @@
 # Find available port to run server on 
 port=$(find_port "${host:?}") 
 
-# UCSF MODS
+# Configuration specific to the UCSF C4 cluster
 export http_proxy=c4-yum1:3128
 export https_proxy=c4-yum1:3128
 export ftp_proxy=c4-yum1:3128
 export ONDEMAND_APP=RStudioServer
+
+## Session information (useful for debugging)
+echo "Started on: $(date --rfc-3339=seconds)"
+echo "Hostname: $(hostname)"
+echo "Username: $(id --user --name)"

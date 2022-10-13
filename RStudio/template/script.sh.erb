@@ -2,12 +2,13 @@
 
 #shellcheck source=before.sh.erb
 
+## Load R and RStudio Server Controller
 module load <%= context.additional_modules %>
 module load CBI
 module load r/<%= context.r_version %>
 module load rstudio-server-controller
 
-# troubleshooting
+# Debug output
 module list    
 
 # Start RSC launching the personal Rstudio Server instance
