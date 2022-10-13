@@ -5,7 +5,7 @@ batch_connect:
   template: "basic"
 script:
   native:
-    - "-N 1"
+    - "--nodes=1"
     - "--ntasks"
     - "<%= slurm_cores.blank? ? 1 : slurm_cores.to_i %>"
     - "--mem"
