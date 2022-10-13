@@ -32,4 +32,3 @@ jobs:
         PATH="bin:$PATH" command -v shellcheck
         PATH="bin:$PATH" shellcheck --version
         PATH="bin:$PATH" make shellcheck
-

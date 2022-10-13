@@ -2,6 +2,8 @@ SHELL=bash
 
 %:
 	(cd RStudio; make "$@")
+	(cd jupyter; make "$@")
+	(cd jupyter_conda; make "$@")
 
 r_versions:
 	@printf '      - ["default", ""]\n'

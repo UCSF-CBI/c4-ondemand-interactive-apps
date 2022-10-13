@@ -10,6 +10,7 @@ cd "${HOME}"
 # Start Jupyter Notebook Server
 #
 
+# shellcheck disable=1009,1072,1073
 <%- unless context.modules.blank? -%>
 # Purge the module environment to avoid conflicts
 module purge
