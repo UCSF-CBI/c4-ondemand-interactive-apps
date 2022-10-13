@@ -24,9 +24,11 @@ jobs:
         curl -L -O https://github.com/koalaman/shellcheck/releases/download/v0.8.0/shellcheck-v0.8.0.linux.x86_64.tar.xz
         tar Jxf shellcheck-v0.8.0.linux.x86_64.tar.xz
         mv shellcheck-v0.8.0/shellcheck .
+        PATH=".:$PATH" command -v shellcheck
         PATH=".:$PATH" shellcheck --version
 
     - name: ShellCheck
       run: |
-        PATH=".:$PATH" make shellcheck
+        PATH="shellcheck-v0.8.0:$PATH" command -v shellcheck
+        PATH="shellcheck-v0.8.0:$PATH" make shellcheck
 
