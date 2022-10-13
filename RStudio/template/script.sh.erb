@@ -3,9 +3,9 @@
 #shellcheck source=before.sh.erb
 
 ## Load R and RStudio Server Controller
-module load <%= context.additional_modules %>
+module load "<%= context.additional_modules %>"
 module load CBI
-module load r/<%= context.r_version %>
+module load r/"<%= context.r_version %>"
 module load rstudio-server-controller
 
 # Debug output
