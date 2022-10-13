@@ -23,15 +23,13 @@ jobs:
         shellcheck --version
         curl -L -O https://github.com/koalaman/shellcheck/releases/download/v0.8.0/shellcheck-v0.8.0.linux.x86_64.tar.xz
         tar Jxf shellcheck-v0.8.0.linux.x86_64.tar.xz
-        mv shellcheck-v0.8.0/shellcheck .
-        echo "PWD=$PWD"
-        PATH=".:$PATH" command -v shellcheck
-        PATH=".:$PATH" shellcheck --version
+        mv shellcheck-v0.8.0 bin
+        PATH="bin:$PATH" command -v shellcheck
+        PATH="bin:$PATH" shellcheck --version
 
     - name: ShellCheck
       run: |
-        echo "PWD=$PWD"
-        PATH=".:shellcheck-v0.8.0:$PATH" command -v shellcheck
-        PATH=".:shellcheck-v0.8.0:$PATH" shellcheck --version
-        PATH=".:shellcheck-v0.8.0:$PATH" make shellcheck
+        PATH="bin:$PATH" command -v shellcheck
+        PATH="bin:$PATH" shellcheck --version
+        PATH="bin:$PATH" make shellcheck
 
