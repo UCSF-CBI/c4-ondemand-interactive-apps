@@ -1,7 +1,7 @@
 SHELL=bash
 
 %:
-	(cd Rstudio; make "$@")
+	(cd RStudio; make "$@")
 
 r_versions:
 	@printf '      - ["default", ""]\n'
